@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvBat"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="gg"
+            android:textColor="#bebebdbd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="282dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+
+        <Button
+            android:id="@+id/btnArView"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounding_button"
+            android:drawableStart="@drawable/ic_map"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="목원대 AR 지도"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnFood"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounding_button"
+            android:drawableStart="@drawable/ic_food"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="금주의 식단"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+
+        <Button
+            android:id="@+id/btnLib"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/btnBus"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounding_button"
+            android:drawableStart="@drawable/ic_lib"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="열람실 빈자리 확인"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+        <Button
+
+            android:id="@+id/btnBus"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounding_button"
+            android:drawableStart="@drawable/ic_schoolbus"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="통학버스"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnNaverCalc"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_toEndOf="@+id/btnBus"
+            android:background="@drawable/rounding_button"
+            android:drawableStart="@drawable/ic_a"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="학점 계산기"
+
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+
+        <Button
+            android:id="@+id/btnCall"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/btnNaverCalc"
+            android:background="@drawable/rounding_button"
+            android:drawableStart="@drawable/ic_call"
+            android:paddingStart="10dp"
+            android:paddingRight="10dp"
+            android:text="부서 전화 연결"
+            android:textColor="#fff"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="UNI-Versiry Mokwon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/android"
+            android:drawablePadding="5dp"
+            android:text="2018 SD Architecture @Developed by JW Heo" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
