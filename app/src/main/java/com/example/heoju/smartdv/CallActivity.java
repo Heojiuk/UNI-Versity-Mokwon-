@@ -97,7 +97,7 @@ public class CallActivity extends AppCompatActivity {
         engClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String num = "114";
+                String num = "0428297670";
                 call(num);
             }
         });

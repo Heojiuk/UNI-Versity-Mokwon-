@@ -43,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(Color.parseColor("#820202"));
 
         logo = (ImageView) findViewById(R.id.logo);
-        new Thread(new BitmapRunnable(logo, imageUrl)).start();
         tvBat = (TextView) findViewById(R.id.tvBat);
+
+        new Thread(new BitmapRunnable(logo, imageUrl)).start();
 
         Button btnArView = (Button) findViewById(R.id.btnArView);
         Button btnCall = (Button) findViewById(R.id.btnCall);
@@ -67,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String uri = "http://mokwon.unibus.kr/";
-                webViewConnect(uri);
+                siteConn(uri);
+
+
             }
         });
 
@@ -94,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String uri = "http://www.mokwon.ac.kr/sub040401";
-                webViewConnect(uri);
+                siteConn(uri);
             }
         });
 
@@ -103,15 +106,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String uri = "http://click.mokwon.ac.kr/Clicker/UserSeat/20150806161306129";
-                webViewConnect(uri);
+                siteConn(uri);
             }
         });
     }
 
-    private void webViewConnect(String uri) {
+    private void siteConn(String uri) {
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
         startActivity(intent);
+    }
+
+    private long time = 0;
+
+    @Override
+    public void onBackPressed() {
+        if (System.currentTimeMillis() - time >= 2000) {
+            time = System.currentTimeMillis();
+            Toast.makeText(getApplicationContext(), "뒤로 버튼을 한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show();
+        } else if (System.currentTimeMillis() - time < 2000) {
+            finish();
+        }
     }
 
     BroadcastReceiver br = new BroadcastReceiver() {
@@ -123,10 +138,9 @@ public class MainActivity extends AppCompatActivity {
                 int remain = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
 
 
-                if (remain >= 80){
+                if (remain >= 80) {
                     //tvBat.setText("배터리 " + remain);
-                    }
-                else if (remain >= 60) {
+                } else if (remain >= 60) {
                     //Toast.makeText(getApplicationContext(), "배터리가 60% 이상입니다", Toast.LENGTH_SHORT).show();
                 } else if (remain >= 20) {
                     //  Toast.makeText(getApplicationContext(), "배터리가 20% 이상입니다 충전해주세요", Toast.LENGTH_SHORT).show();
